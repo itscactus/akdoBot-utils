@@ -3,6 +3,10 @@ language: lang-en
 Bot:
   Token: "token"
   Prefix: "prefix"
+  DDDD:
+    AA: ""
+    DDDD:
+      DDDD: ""
 Systems:
   AutoRoleRoleId: ""
   OrderChannelId: ""
