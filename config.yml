@@ -1,5 +1,6 @@
 websiteURL: "https://github.com"
 language: lang-en
+configVersion: 1
 Bot:
   Token: "token"
   Prefix: "prefix"
