@@ -1,0 +1,95 @@
+websiteURL: "https://github.com"
+language: lang-en
+Bot:
+  Token: "token"
+  Prefix: "prefix"
+Systems:
+  AutoRoleRoleId: ""
+  OrderChannelId: ""
+  SuggestionChannelId: ""
+  CustomerRoleId: ""
+  TitleEmoji: "✨"
+  LoginLogChannel: ""
+  LeaveLogChannel: ""
+  TicketLog: ""
+Timings:
+  Enabled: false
+  ChannelId: ""
+Embeds:
+  LoginEmbed:
+    title: "Welcome"
+    description: "Welcome to the server {member}, With you we are now {memberCount} members."
+    footer: 
+      text: "AkdoBot | a zRooter Product"
+    author:
+      name: "akdoBot"
+  LeaveEmbed:
+    title: "Bye"
+    description: "Bye {member} I hope you'll comeback soon, Without you we're only {memberCount} members."
+    footer: 
+      text: "AkdoBot | a zRooter Product"
+    author:
+      name: "akdoBot"
+Ticket:
+  ArchiveCategory: ""
+  ActiveCategory: ""
+  TicketTeamRoleId: ""
+  TicketMessages:
+    ticketOpen:
+      type: "embed" # 'embed' or 'image'
+      assets: "./assets/medusaticket.png"
+      embed:
+        description: "To create a ticket please interact with 'Create Ticket'"
+        footer: 
+          text: "AkdoBot | a zRooter Product"
+        author:
+          name: "akdoBot"
+    ticketSettings:
+      type: "embed" # 'embed' or 'image'
+      assets: "./assets/medusaticket.png"
+      embed:
+        description: "Welcome to your ticket {member}!\n> Department: {category}"
+        footer: 
+          text: "AkdoBot | a zRooter product!"
+        author:
+          name: "akdoBot"
+    selectCategory:
+      type: "embed" # 'embed' or 'image'
+      assets: "./assets/medusaticket.png"
+      embed:
+        description: "Please select an Department."
+        footer: 
+          text: "AkdoBot | a zRooter product!"
+        author:
+          name: "akdoBot"
+  Emojis:
+    createTicket: "📧"
+    webSite: "📄"
+    callSupport: "🤵"
+    callTicketOwner: "🧒"
+    closeTicket: "❌"
+    saveTicket: "📜"
+  Categories:
+    - id: example
+      emoji: 💻
+      label: Example
+      description: Example Category
+  Settings:
+    ticketSettings: 
+      Label: "Ticket Options"
+    callSupport: 
+      Label: "Call Support"
+      Description: "Sends a private message to Server Owner."
+    callTicketOwner:
+      Label: "Call Ticket Owner"
+      Description: "Sends a private message to Ticket Owner."
+    saveTicket:
+      Label: "Save The Channel"
+      Description: "Saves the Channel as TXT."
+    closeTicket: 
+      Label: "Close Ticket"
+      Description: "Closes the ticket.."
+  MainButtons:
+    WebSite: "Website"
+    CreateTicket: "Create Ticket"
+    
