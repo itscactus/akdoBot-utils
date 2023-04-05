@@ -1,97 +1,185 @@
-websiteURL: "https://github.com"
-language: lang-en
+websiteURL: ''
+language: lang-tr
 configVersion: 1
+ownerId: ''
 Bot:
-  Token: "token"
-  Prefix: "prefix"
-
+  Token: ''
+  Prefix: '!'
 Systems:
-  AutoRoleRoleId: ""
-  OrderChannelId: ""
-  SuggestionChannelId: ""
-  CustomerRoleId: ""
-  TitleEmoji: "✨"
-  LoginLogChannel: ""
-  LeaveLogChannel: ""
-  TicketLog: ""
+  AutoRoleRoleId: ''
+  OrderChannelId: ''
+  SuggestionChannelId: ''
+  CustomerRoleId: ''
+  TitleEmoji: 🟢
+  LoginLogChannel: ''
+  LeaveLogChannel: ''
+  ApplicationsLogChannel: ''
+  TicketLog: ''
 Timings:
   Enabled: false
-  ChannelId: ""
+  ChannelId: ''
 Embeds:
   LoginEmbed:
-    title: "Welcome"
-    description: "Welcome to the server {member}, With you we are now {memberCount} members."
-    footer: 
-      text: "AkdoBot | a zRooter Product"
+    title: Welcome
+    description: Welcome to the server {member}, With you we are now {memberCount} members.
+    footer:
+      text: AkdoBot | a cactusdev product
     author:
-      name: "akdoBot"
+      name: akdoBot
   LeaveEmbed:
-    title: "Bye"
-    description: "Bye {member} I hope you'll comeback soon, Without you we're only {memberCount} members."
-    footer: 
-      text: "AkdoBot | a zRooter Product"
+    title: Bye
+    description: >-
+      Bye {member} I hope you'll comeback soon, Without you we're only
+      {memberCount} members.
+    footer:
+      text: AkdoBot | a cactusdev product
     author:
-      name: "akdoBot"
+      name: "{member_name}"
+      icon_url: "{member_avatar}"
+  SuggestionEmbed:
+    title: "New Suggestion from {member_tag}"
+    fields:
+      - name: "Suggested by:" 
+        value: "{member}"
+      - name: "Suggestion:"
+        value: "{suggestion}"
+    footer:
+      text: "AkdoBot | a cactusdev product"
+    author:
+      name: "{guild_name}"
+      icon_url: "{guild_icon}"
 Ticket:
-  ArchiveCategory: ""
-  ActiveCategory: ""
-  TicketTeamRoleId: ""
+  ArchiveCategory: ''
+  ActiveCategory: ''
+  TicketTeamRoleId: ''
   TicketMessages:
     ticketOpen:
-      type: "embed" # 'embed' or 'image'
-      assets: "./assets/medusaticket.png"
+      type: embed
+      assets: ./assets/medusaticket.png
       embed:
-        description: "To create a ticket please interact with 'Create Ticket'"
-        footer: 
-          text: "AkdoBot | a zRooter Product"
+        description: To create a ticket please interact with 'Create Ticket'
+        footer:
+          text: AkdoBot | a cactusdev product
         author:
-          name: "akdoBot"
+          name: akdoBot
     ticketSettings:
-      type: "embed" # 'embed' or 'image'
-      assets: "./assets/medusaticket.png"
+      type: embed
+      assets: ./assets/medusaticket.png
       embed:
-        description: "Welcome to your ticket {member}!\n> Department: {category}"
-        footer: 
-          text: "AkdoBot | a zRooter product!"
+        description: |-
+          Welcome to your ticket {member}!
+          > Department: {category}
+        footer:
+          text: AkdoBot | a cactusdev product!
         author:
-          name: "akdoBot"
+          name: akdoBot
     selectCategory:
-      type: "embed" # 'embed' or 'image'
-      assets: "./assets/medusaticket.png"
+      type: embed
+      assets: ./assets/medusaticket.png
       embed:
-        description: "Please select an Department."
-        footer: 
-          text: "AkdoBot | a zRooter product!"
+        data: '341'
+        description: Please select an Department.
+        footer:
+          text: AkdoBot | a cactusdev product!
         author:
-          name: "akdoBot"
+          name: akdoBot
   Emojis:
-    createTicket: "📧"
-    webSite: "📄"
-    callSupport: "🤵"
-    callTicketOwner: "🧒"
-    closeTicket: "❌"
-    saveTicket: "📜"
+    createTicket: 📧
+    webSite: 📄
+    callSupport: 🤵
+    callTicketOwner: 🧒
+    closeTicket: ❌
+    saveTicket: 📜
+    apply: 👨‍🔬
   Categories:
     - id: example
       emoji: 💻
       label: Example
       description: Example Category
   Settings:
-    ticketSettings: 
-      Label: "Ticket Options"
-    callSupport: 
-      Label: "Call Support"
-      Description: "Sends a private message to Server Owner."
+    ticketSettings:
+      Label: Ticket Options
+    callSupport:
+      Label: Call Support
+      Description: Sends a private message to Server Owner.
     callTicketOwner:
-      Label: "Call Ticket Owner"
-      Description: "Sends a private message to Ticket Owner."
+      Label: Call Ticket Owner
+      Description: Sends a private message to Ticket Owner.
     saveTicket:
-      Label: "Save The Channel"
-      Description: "Saves the Channel as TXT."
-    closeTicket: 
-      Label: "Close Ticket"
-      Description: "Closes the ticket.."
+      Label: Save The Channel
+      Description: Saves the Channel as TXT.
+    closeTicket:
+      Label: Close Ticket
+      Description: Closes the ticket..
   MainButtons:
-    WebSite: "Website"
-    CreateTicket: "Create Ticket"
-    
+    WebSite: Website
+    CreateTicket: Create Ticket
+    Apply: Apply
+Apply:
+  Enabled: false
+  ApplyMessages:
+    newApplication:
+      type: embed
+      assets: ./assets/medusaticket.png
+      embed:
+        description: Please select the position you want to apply.
+        footer:
+          text: AkdoBot | a cactusdev product
+        author:
+          name: akdoBot
+    logMessage:
+      embed:
+        title: "A new Application"
+        description: "{member} has applied for {position}"
+        footer:
+          text: "{member_tag}"
+          icon_url: "{member_avatar}"
+        author:
+          name: "{member_tag}"
+          icon_url: "{member_avatar}"
+  ValidPositions:
+    - Name: "Bot Developer"
+      Description: 'You need to know: JavaScript, Python, Java or C#'
+      Id: "bot-developer"
+      Questions:
+        # Max 5 Questions
+        - Label: "Which library do you use?"
+          Type: "SHORT" # also can be "PARAGRAPH"
+          Placeholder: "discord.js, discord.py, JavaCord, JDA" # "" = no placeholder
+          Id: "quest-1"
+          Required: true
+        - Label: "Please tell us about you?"
+          Id: "quest-2"
+          Type: "PARAGRAPH" # also can be "PARAGRAPH"
+          MaxLength: 1024
+          MinLength: 10
+          Required: false
+        - Label: "Why do u want to work with us?"
+          Id: "quest-3"
+          Type: "PARAGRAPH" # also can be "PARAGRAPH"
+          MaxLength: 1024
+          MinLength: 10
+          Required: false
+
+    - Name: "Minecraft Plugin Developer"
+      Description: 'You need to know: Java and BukkitAPI'
+      Id: "plugin-developer"
+      Questions:
+        # Max 5 Questions
+        - Label: "Do you think that u're good at this?"
+          Type: "SHORT" # also can be "PARAGRAPH"
+          Placeholder: "Yes, no, maybe" # "" = no placeholder
+          Id: "quest-1"
+          Required: true
+        - Label: "Please tell us about you?"
+          Id: "quest-2"
+          Type: "PARAGRAPH" # also can be "PARAGRAPH"
+          MaxLength: 1024
+          MinLength: 10
+          Required: false
+        - Label: "Why do u want to work with us?"
+          Id: "quest-3"
+          Type: "PARAGRAPH" # also can be "PARAGRAPH"
+          MaxLength: 1024
+          MinLength: 10
+          Required: false
